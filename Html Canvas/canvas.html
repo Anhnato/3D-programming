@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <canvas id="myCanvas" width="600" height="480"></canvas>
+
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            var grd = ctx.createLinearGradient(0, 0, 300, 300);
+            grd.addColorStop(0, "black");
+            grd.addColorStop(1, "white");
+            ctx.fillStyle = grd;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            //Head
+            ctx.beginPath();
+            ctx.rect(150, 50, 190, 100);
+            ctx.fillStyle = "green";
+            ctx.fill();
+            ctx.closePath();
+
+            //Body
+            ctx.beginPath();
+            ctx.rect(100, 150, 190, 200);
+            ctx.fillStyle = "orange";
+            ctx.fill();
+            ctx.closePath();
+
+            //Tail
+            ctx.beginPath();
+            ctx.moveTo(100, 290);
+            ctx.lineTo(50, 100);
+            ctx.stroke();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.arc(90, 130, 50, 2.5, 1.2 *Math.PI);
+            ctx.stroke();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.moveTo(50, 160);
+            ctx.lineTo(100, 300);
+            ctx.stroke();
+            ctx.closePath();
+
+            //Eye
+            ctx.beginPath();
+            ctx.arc(290, 90, 15, 0, 2 * Math.PI);
+            ctx.fillStyle = "blue";
+            ctx.fill();
+            ctx.closePath();
+
+            //Beak
+            ctx.beginPath();
+            ctx.moveTo(340, 100);
+            ctx.lineTo(380, 120);
+            ctx.lineTo(340, 130);
+            ctx.fillStyle = "brown";
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+
+            //Feet
+            ctx.beginPath();
+            ctx.moveTo(250, 350);
+            ctx.lineTo(250, 400);
+            ctx.lineTo(280, 400);
+            ctx.lineTo(280, 410);
+            ctx.lineTo(235, 410);
+            ctx.lineTo(235, 350);
+            ctx.lineTo(150, 350);
+            ctx.lineTo(150, 400);
+            ctx.lineTo(180, 400);
+            ctx.lineTo(180, 410);
+            ctx.lineTo(135, 410);
+            ctx.lineTo(135, 350);
+            ctx.fillStyle = "yellow";
+            ctx.fill();
+            ctx.stroke();        
+        </script>    
+    </body>
+</html>
